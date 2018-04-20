@@ -1,6 +1,8 @@
 package com.foursquare.takehome;
 
-public final class Person {
+import android.support.annotation.NonNull;
+
+public final class Person implements Comparable<Person> {
     private int id;
     private String name;
     private long arriveTime;
@@ -36,5 +38,15 @@ public final class Person {
 
     public void setLeaveTime(long leaveTime) {
         this.leaveTime = leaveTime;
+    }
+
+    @Override
+    public int compareTo(@NonNull Person p) {
+        if(this.getArriveTime() - p.getArriveTime() == 0)
+            return 0;
+        if(this.getArriveTime() - p.getArriveTime() > 0)
+            return 1;
+        else
+            return -1;
     }
 }

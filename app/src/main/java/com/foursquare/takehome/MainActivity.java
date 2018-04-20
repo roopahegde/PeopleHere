@@ -11,7 +11,6 @@ import android.widget.TextView;
 import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,10 +45,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private void setupData(Venue venue) {
 
-        Util util = new Util(venue.getVisitors());
+
         //Get visitor list along with venue idle time slots and set it to adapter
-        personAdapter.updateVisitorList(
-                util.getVisitorsAndIdleTime(venue.getOpenTime(), venue.getCloseTime()));
+        personAdapter.updateVisitorList(venue);
         //Set venue name
         venueName.setText(venue.getName());
 
