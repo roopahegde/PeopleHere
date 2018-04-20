@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">People Here</string>
+    <string name="no_visitors">No Visitors</string>
+    <string name="timestamp">%1$s - %2$s</string>
+</resources>
